@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button href="" class="return">
+      <ion-icon name="md-arrow-round-back"></ion-icon>
+    </ion-back-button>
+    <ion-title position="center">lista Telefonica</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-fab  vertical="top" horizontal="end" slot="fixed" edge="true" >
+    <ion-fab-button size="small" color="light"    routerLink="/info-tel/-1">
+      <ion-icon name="person-add-outline"></ion-icon>
+
+    </ion-fab-button>
+    <ion-fab>
+      <ion-fab-button (click)="spin()"></ion-fab-button>
+    </ion-fab>
+  </ion-fab>
+  <ion-list>
+    <ion-item *ngFor="let telList of telList;" routerLink="/info-tel/{{telList.id}}">
+        <ion-avatar>
+          <img class="avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDsUykPqPLov0KSVdFx6JKKjN6fPpEIYJ0Tg&usqp=CAU" alt="avatar">
+        </ion-avatar>
+        <ion-label class="name">{{telList.nome}}</ion-label>
+        <ion-label class="tel"> <ion-icon name="call-outline"></ion-icon>
+          {{telList.numero}}</ion-label>
+
+
+
+    </ion-item>
+
+
+
+
+
+  </ion-list>
+
+
+
+
+</ion-content>
